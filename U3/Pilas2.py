@@ -50,6 +50,12 @@ class Stack:
             self.head = self.head.next
         return cadena
 
+    def exist(self):
+        dato = None
+        if self.head == "Jesus":
+            dato = True
+        return dato
+    
 pila = Stack()
 print(pila.peak())
 pila.push("Jesus")
@@ -64,4 +70,4 @@ print(pila.peak())
 print('Metodo show')
 
 print(pila.show())
-
+print(pila.exist())
