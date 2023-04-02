@@ -33,7 +33,7 @@ class Queue:
             self.tail = self.tail.next
     def deQueue(self):
         if not self.isEmpty():
-            old = self.head
+            old = self.headlf
             if self.size == 1:
                 self.tail = None
             self.size -= 1
@@ -56,12 +56,13 @@ class Queue:
                 self.tail = None
         return data
     
-    def PrintF(self):
-        printF = ""
-        while self.head != None:
-            printF += self.head.data 
-            self.head = self.head.next
-        return printF
+    def show(self):
+        datos = ''
+        id = self.head
+        for i in range(0, self.size):
+            datos += str(id.data) + '<='
+            id = id.next
+        return datos
 
 #Hacer que funcione el show y hacer el serch
 
@@ -75,10 +76,5 @@ q.enQueue(8)
 print(q.head.data)
 print(q.head.next.data)
 print(q.tail.data)
-#Metodo printF
-print(q.PrintF())
-#Metodo deQueue
-print(q.deQueue())
-print(q.deQueue())
-print(q.deQueue())
-print(q.deQueue())
+#Metodo show
+print( q.show())
